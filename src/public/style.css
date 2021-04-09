@@ -1,0 +1,322 @@
+/* theme colors */
+:root{
+    --gray-color:  #231f20;
+    --font-color: #eeeeee;
+    --orange-color: rgb(212, 138, 0);
+}
+
+/* removes the horizontal scroll issue on larger screen but not mobile version */
+*{
+    max-width: 100%;
+}
+
+/* body */
+body {
+    background: #eeeeee;
+    font-family: 'Lato', sans-serif;
+    padding: 0px !important;
+    margin: 0px !important;
+    font-size:15px;
+
+}
+
+/* logo png */
+.logo-ft{
+    width: 50%;
+    margin-bottom: 13px;
+}
+.logo-header{
+    width: 120px;
+}
+
+/* top nav bar */
+.navbar{
+    background-color: var(--font-color) !important;
+}
+.nav-link{
+    font-size: 18px;
+    color: var(--orange-color) !important;
+    transition: transform .2s; 
+    padding: 7px 20px !important;
+    
+}
+.nav-link:hover{
+    /* color: var(--font-color) !important; */
+    transform: scale(1.18);
+
+}
+.navbar-toggler{
+    background-color: black !important;
+}
+
+
+/* header */
+header{
+    position: relative;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url("images/pic2.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100vh;
+}
+.welcome-text{
+    position: absolute;
+    margin-top: 22rem;
+    margin-left: 5rem;
+    color: var(--font-color);
+    text-align: center;
+    line-height: 3rem;
+}
+
+
+.btn-main{
+    border: 1px solid var(--orange-color);
+    text-decoration: none;
+    color: var(--orange-color);
+    font-size: 18px;
+    padding: 12px;
+    border-radius: 8px;
+}
+.btn-main:hover{
+    text-decoration: none;
+    color: var(--font-color);
+    background-color: var(--orange-color);
+}
+
+/* side bar navigation  */
+
+
+/* about section */
+
+#about-section{
+    margin-top: 100px;
+}
+.vision-mission{
+    width: 90%;
+    margin: auto;
+    
+}
+.section-title{
+    color: var(--orange-color);
+    margin-bottom: 100px;
+    margin-top: 50px;
+    text-shadow: 2px 2px rgba(0, 0, 0, 0.5);
+}
+.section-text{
+    width: 90%;
+    margin: auto;
+    margin-top: 150px;
+    margin-bottom: 200px;
+
+}
+.feature{
+    box-shadow: 1px 1px 6px 0px rgba(0, 0, 0, 0.5);
+    /* padding */
+}
+
+.feature-icon{
+    margin-top: 20px;
+}
+.feature .fa{
+    font-size: 30px !important;
+    color: var(--orange-color) !important;
+}
+.footer-list .fa{
+    font-size: 20px !important;
+    color: var(--orange-color) !important;
+}
+.cohort-dates .far, .cohort-hours .fa{
+    font-size: 15px !important;
+    color: var(--orange-color) !important;
+}
+.cohort-dates{
+    width: 50%;
+    margin: auto;
+}
+.cohort-hours li, .cohort-dates li, .footer-links li{
+    list-style-type: none;
+    line-height: 1.6rem;
+}
+.cohorts-section a{
+    color: var(--orange-color);
+    text-decoration: underline;
+    font-size: 16px;
+}
+.cohorts-section{
+    /* box-shadow: 0px 0px 4px 2px rgba(0, 0, 0, 0.5); */
+    /* padding-top: 1%; */
+    padding-bottom: 20px;
+    font-size: small;
+    border-radius: 5px;
+}
+.cohort-picks{
+    display: flex;
+    font-size: small;
+    justify-content: stretch;
+    margin-top: 10px;
+}
+.about-mini{
+    margin-top: 40px;
+}
+.cohort-picks .icon{
+    font-size: 40px !important;
+}
+.cohort-picks-fa{
+    margin: 6px;
+}
+/* bonus section */
+.bonus-section{
+    height: 45vh;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url("images/logo.jpg");
+    margin-top: 90px;
+    position: relative;
+    background-attachment: fixed;
+    
+
+}
+.bonus-text{
+    position: absolute;
+    text-align: center;
+    color: var(--font-color);
+    line-height: 4rem;
+}
+.bonus-text h2{
+    margin-top: 100px;
+}
+.orange-text{
+    color: var(--orange-color);
+}
+
+/* footer */
+footer{
+    margin-top: 200px;
+    padding-bottom: 50px;
+    color: var(--font-color);
+    background-color: var(--gray-color);
+}
+.footer-list{
+    list-style-type: none;
+    
+}
+.contact{
+    padding: 0 6px;
+    word-spacing: 0.6rem;
+    line-height: 1.5rem;
+}
+address{
+    display: flex;
+    flex-direction: row;
+}
+.location{
+    margin-right: 1.5rem;
+}
+
+.footer-title{
+    margin-top: 60px;
+}
+.footer-logo{
+    margin-top: 20px;
+}
+.footer-links li a, .footer-links li{
+    color: var(--orange-color);
+    line-height: 2rem;
+}
+.btn-ft{
+    color: var(--font-color) !important;
+    border: 1px solid var(--font-color) !important;
+    border-left: none !important;
+}
+.logo-ft{
+    width: 220px;
+}
+
+/* partners-section */
+.partners-section{
+    margin-top: 120px;
+   
+}
+.logos{
+    width: 250px;
+}
+.logos-div{
+    width: 86%;
+    margin: auto;
+}
+.partners-section h2{
+    margin-bottom: 100px;
+}
+.section-title-2{
+    color: var(--gray-color);
+    text-shadow: 2px 2px rgba(0, 0, 0, 0.5);
+}
+/* cohorts page */
+.cohort-intro-div{
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+.impact-div{
+    width: 95%;
+    margin: auto;
+}
+
+.cohort-paragraph{
+    font-size: larger;
+    width: 85%;
+    margin: auto;
+}
+
+.thumb-img, .thumb-div{
+    width: 100%;
+    margin: auto;
+}
+
+.taiming{
+    font-size: small;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    padding-left: 2rem;
+}
+.single-event-page{
+    box-shadow: 1px 1px 3px 0px rgba(0, 0, 0, 0.5);
+    width: 90%;
+    margin: auto;
+}
+.single-event-info{
+    padding-top: 1.8rem;
+    padding-bottom: 1.8rem;
+}
+.read-more-btn{
+    background-color: var(--orange-color);
+    color: var(--font-color);
+    padding: 8px;
+    font-size: small;
+}
+.read-more-btn:hover{
+    text-decoration: none;
+    color: var(--orange-color);
+    background-color: var(--font-colors);
+    border: 1px solid var(--orange-color);
+}
+.thumb-img-2{
+    width: 100%;
+    height: 100%;
+}
+
+
+/* media queries */
+@media only screen and (max-width: 780px){
+    .welcome-text{
+        margin-left: auto;
+        margin-top: 18rem;
+    }
+    .cohort-paragraph{
+        width: 95%;
+        margin: auto;
+    }
+    .cohort-dates{
+        width: 95%;
+        margin: auto;
+    }
+}
+

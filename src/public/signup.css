@@ -1,0 +1,104 @@
+body{
+      
+    background-image: linear-gradient(rgba(0, 0, 0, 0.8),rgba(179, 172, 116, 0.8)),url("code queen.jpg");
+	padding: relative;
+	position: relative;
+	backdrop-filter: 20px;
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+   
+  
+}
+.logo 
+{
+display: flex;
+justify-self: start;
+width: 200px;
+height: 150px;
+
+}
+.form-space 
+{
+    background-color: orange;
+    margin-bottom: 20px;
+    border-radius: 20px;
+    margin-left: 50px;
+    margin-right: 50px;
+    width: 800px;
+    height: 700px;
+    margin: auto;
+    padding-top: 50px;
+
+}
+
+.title
+{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 3rem;
+    font-weight: bold;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+
+}
+.registration-form{
+    padding: 50px;
+   
+}
+
+.form-area{
+    background-color: #fff;
+    margin: auto;
+    padding: 40px 40px;
+    border-radius: 30px;
+    box-shadow: 5px 5px 10px rgb(25, 26, 25);
+    max-width:  600px;
+    max-height: 600px;
+  
+}
+
+.registration-form .item{
+	border-radius: 20px;
+    margin-bottom: 25px;
+    padding: 10px 20px;
+    display: block;
+	width: 100%;
+	box-sizing: border-box;	
+	border: 1px solid #dddddd;
+	background:white;
+	transition: background 0.2s, border-color 0.2s;
+	outline: none;
+}
+#register-btn
+{
+    width: 100%;
+	padding: 1rem 2rem;
+	font-weight: bold;
+	color:white;
+	outline: none;
+	cursor: pointer;
+	background: gray;
+	font-size: 1.2rem;
+	border: none;
+	border-radius: 30px;
+	margin-top: 1rem;
+}
+#register-btn:active
+{
+    transform:scale(0.7);
+}
+
+
+@media (max-width: 576px) {
+    .registration-form form{
+        padding: 50px 20px;
+    }
+
+    .registration-form .form-icon{
+        width: 70px;
+        height: 70px;
+       
+    }
+}

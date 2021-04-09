@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Login Page</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="login.css">
+
+</head>
+<body>
+	<div class="logo">
+		<img src="CodeQueen Logo.png" alt="CodeQueen logo" width="200px">
+	</div>
+	<div class="big-one">
+		<h1 class="form-title">Login</h1>
+
+		<div class="container">
+			<form action="/login" class="form"id="loginform"method="POST">
+				
+				<div class="form-input-group">
+					<input type="text" class="form-input" id="username" name= "username" autofocus placeholder="Username">
+				</div>
+				<div class="form-input-group">
+					<input type="password" class="form-input" id="password" name="password" autofocus placeholder="Password">
+				<div> 
+				<div class="forgotpass"> <a href="/forgotpassword" class="ml-auto mb-0 text-md">Forgot Password?</a></div>
+				<button type="submit" class="form-button" >Submit</button>
+				<p class="form-text">Don't have an account? <a id="form-link" href='/signup'>Sign Up Here</a></p>
+			</form>
+			
+		</div>
+	</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>  
+<script src="login.js"></script>
+</body>
+</html>
