@@ -1,7 +1,7 @@
 import express from "express";
-//import User from "../models/User";
 const session = require('express-session');
 const MongoDBSession = require('connect-mongodb-session')(session);
+const flash = require('express-flash');
 import userRoutes from "./routes/userRoutes";
 import applicationRoutes from "./routes/applicationRoutes";
 import cors from "cors";
@@ -31,21 +31,7 @@ app.use(session({
   }
 })
 );
-//middleware for finding userId
-/*app.use((req,res,next) => {
-  const {userId} = req.session
-  if(userId) {
-    res.locals.user = User.findOne(user => user.Id === userId)
-  }
-  next();
-})*/
-/*const isAuth = (req, res, next) => {
-  if(req.session.isAuth){
-    next()
-  } else {
-    res.redirect('/login')
-  }
-}*/
+app.use(flash());
 app.use(bodyParser.urlencoded({
   extended:true
 }));

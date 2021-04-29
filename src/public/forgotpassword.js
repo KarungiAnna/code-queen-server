@@ -21,21 +21,36 @@ function sendlink()
   
 //
 const form = document.getElementById("myform");
+
 form.addEventListener('submit', async (e) => {
+	//console.log(e.window.location)
 	e.preventDefault();
- //get values
-   const email = form.email.value;
-	
- try {
+//get values
+const email = form.email.value;
+ console.log(email,"******")
+/*try {
+		const res = await fetch('/forgotpassword',{
+	   method: 'POST',
+	   body: JSON.stringify({ email }),	
+	   headers: {'Content-Type': 'application/json'}
+	   });
+	   const data = await res.json()
+	   console.log(data);
+	}
+	catch (error) {
+	  // console.log(error);
+	  throw new Error(error.toString())
+	 }*/
 	 const res = await fetch('/forgotpassword',{
-	method: 'POST',
-	body: JSON.stringify({ email }),	
-	headers: {'Content-Type': 'application/json'}
-	});
-	const data = await res.json();
-	console.log(data);
- }
- catch (error) {
-	console.log(error);
-  }
- });
+		method: 'POST',
+		body: JSON.stringify({ email }),	
+		headers: {'Content-Type': 'application/json'}
+		});
+		const data = await res.json()
+		if(data.error){
+			console.error(data.error)
+		}
+
+  });
+	
+ 

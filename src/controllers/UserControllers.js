@@ -36,36 +36,43 @@ const loginUser = async(req, res) => {
 const forgotPassword = async(req, res, next) => {
 //1)get user based on posted Email
 
-const user = await User.findOne({ email: req.body.email}); 
+const user = await User.findOne({ email: req.body.email }); 
 if(!user) {
-  return next(new Error('There is no user with email address.',404));
-}
+ return res.render('forgotpassword', { errorMessage: "Error: User not found" }
+)
+};
+console.log(user)
 
 //2)generate the random reset token
-const resetToken = user.createPasswordResetToken();
-await user.save({ validateBeforeSave: false});
+//const resetToken = user.createPasswordResetToken();
+//await user.save({ validateBeforeSave: false});
 
 //3)send it to user's email
-const resetURL = `${req.protocol}://${req.get('host')}/resetpassword/${resetToken}`;
-const message = `Forgot your password? submit a PATCH request with your new password and passwordConfirm to: ${resetURL}\n
-If you didn't forget your password, please ignore this email`;
+//const resetURL = `${req.protocol}://${req.get('host')}/resetpassword/${resetToken}`;
+//const message = `Forgot your password? submit a PATCH request with your new password and passwordConfirm to: ${resetURL}\n
+//If you didn't forget your password, please ignore this email`;
 
-try{
-await sendEmail({
-  email: user.email,
-  subject: 'Your password reset token( valid for 10 mins)',
-  message
-});
-res.status(200).json({
+//try{
+//await sendEmail({
+ // email: user.email,
+  //subject: 'Your password reset token( valid for 10 mins)',
+  //message
+//});
+//return res.render('forgotpassword', { successMessage: "Success: Reset Token sent to Email" }
+//)
+/*res.status(200).json({
   status: 'success',
   message: 'Token sent to Email!'
-});
-} catch(error) {
-  user.passwordResetToken = undefined;
-  user.passwordResetExpires = undefined;
-  await user.save({validateBeforeSave: false});
-  return next(new Error('There was an error sending the email. Try again later!'), 500);
-}
+
+});*/
+//} catch(error) {
+  //user.passwordResetToken = undefined;
+  //user.passwordResetExpires = undefined;
+  //await user.save({validateBeforeSave: false});
+  //return next (res.render('forgotpassword', { errorMessage: "Error: There was an error sending the email. Try again later!" })
+//)
+  //return next(new Error('There was an error sending the email. Try again later!'), 500);
+//}
 }
 const resetPassword = async(req, res, next) =>{
  //Get user based on the token
@@ -84,12 +91,31 @@ return next(new Error('Token is invalid or has expired', 400))
  user.confirmPassword = req.body.confirmPassword;
  user.passwordResetToken = undefined;
  user.passwordResetExpires = undefined;
+ //await user.save();
  await user.save();
+  
+  //Send successful password reset email */
+try{
+await sendEmail({
+  email: user.email,
+  subject:'Password Reset Successful' ,
+  message: `Congratulations! Your password reset was successful.`  
+});
+//res.redirect('/login')
+res.status(200).send({
+message: 'check your Email! for password change confirmation'
+});
+} catch(error) {
+  
+  return next(new Error('There was an error sending the email. Try again later!'), 500);
+}
+}
  //Update changedPasswordAt property for the user
  //Log the user in 
-  res.status(201).send({message: "success"});
+ // res.status(201).send({message: "success"});
  
-}
+//}
+
 //Get Homepage
 const homePage = (req, res) => {
  res.render('homepage');
@@ -129,6 +155,7 @@ const studentProfile = async (req, res) => {
   const user = await req.user;
   req.session.isAuth = true;
   console.log(req.session);
+  //console.log(req.session.id);
   res.render('profile');
 }
 //Get Dashboard

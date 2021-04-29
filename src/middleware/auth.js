@@ -1,6 +1,7 @@
 
 require("dotenv").config();
 
+//middleware for finding userId
 
  
     const isAuth = (req, res, next) => {

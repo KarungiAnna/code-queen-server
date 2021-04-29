@@ -2,7 +2,7 @@ import { Router } from 'express';
 import { homePage, cohortsPage, signupPage, createUser, 
  loginPage, 
   loginUser, forgotpasswordPage, forgotPassword, resetpasswordPage, resetPassword, studentProfile, adminDashboard,
-fetchAllUsers } from '../controllers/userControllers';
+fetchAllUsers } from '../controllers/UserControllers';
 import isAuth from '../middleware/auth.js'
 
 

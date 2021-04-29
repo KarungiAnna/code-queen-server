@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { formPage, applicationForm, updateForm, removeForm } from '../controllers/applicationControllers'
+import { formPage, applicationForm, updateForm, removeForm } from '../controllers/ApplicationControllers'
 const router = Router();
 // Application  form route
 router.get('/form', formPage);
