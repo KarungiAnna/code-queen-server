@@ -3,23 +3,25 @@ import mongoose from "mongoose";
 const validator = require('validator')
 import bcrypt from "bcryptjs";
 
+
 const userSchema = mongoose.Schema({
     firstname: {
         type: String,
-        required: true
+        required: [true, 'Please enter your firstname']
     },
     lastname: {
         type: String,
-        required: true
+        required: [true, 'Please enter your lastname']
     },
     username: {
         type: String,
-        required: true
+        required: [true, 'Please enter your username']
     },
     email: {
         type: String,
         unique: true,
-       required: true,
+       required: [true, 'Please enter your email'],
+       minlength:[8, 'Minimum Password length is 8 characters'],
        lowercase: true,
        validate: value => {
            if(!validator.isEmail(value)){
@@ -34,7 +36,7 @@ const userSchema = mongoose.Schema({
     },
     password: {
         type: String,
-        required: true
+        required: [true, 'Please enter your password']
         
     },
     confirmPassword: {
@@ -85,10 +87,10 @@ userSchema.statics.login = async function(username, password) {
       const  isPasswordMatch = await bcrypt.compare(password, user.password);
       if (isPasswordMatch) {
       
-        return user;
-        
+        return user;  
       }
-      throw Error('incorrect password'); 
+     throw Error('incorrect password');
+     
     }
     throw Error('incorrect username');
     

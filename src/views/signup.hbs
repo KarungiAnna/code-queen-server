@@ -10,6 +10,24 @@
     <link rel="stylesheet" type="text/css" href="signup.css">
 </head>
 <body>
+    {{#if errorMessage}}
+<div style ="text-align:center; background-color:#e2e3e5 ;" class="alert alert-{{errorMessage}}">
+	<button style= type ="button" class="close" data-dismiss="alert">&times; </button>
+<span style="color:red;  font-family:'Times New Roman', Times, serif; font-size:19px;">{{errorMessage}}</span>
+</div>
+{{/if}}
+ {{#if successMessage}}
+<div style ="text-align:center; background-color:#e2e3e5 ;" class="alert alert-{{successMessage}}">
+	<button style= type ="button" class="close" data-dismiss="alert">&times; </button>
+<span style="color: green;  font-family:'Times New Roman', Times, serif; font-size:19px;">{{successMessage}}</span>
+</div>
+{{/if}}
+{{#if infoMessage}}
+<div style ="text-align:center; background-color:#e2e3e5 ;" class="alert alert-{{infoMessage}}">
+	<button style= type ="button" class="close" data-dismiss="alert">&times; </button>
+<span style="color: yellow;  font-family:'Times New Roman', Times, serif; font-size:19px;">{{infoMessage}}</span>
+</div>
+{{/if}}
     <div class="logo">
         <img src="CodeQueen Logo.png" alt="CodeQueen logo" width="200px">
     </div>
@@ -19,23 +37,24 @@
             <form action="/signup" id="signupform" method="POST">
                 <div class="form-area">
                     <div class="form-group">
-                        <input type="text" class="form-control item" id="firstname" name="firstname" placeholder="Firstname" >
+                        <input type="text" class="form-control item" id="firstname" name="firstname" placeholder="Firstname" required >
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control item" id="lastname" name="lastname" placeholder="Lastname" >
+                        <input type="text" class="form-control item" id="lastname" name="lastname" placeholder="Lastname" required>
                     </div>
                      <div class="form-group">
-                        <input type="text" class="form-control item" id="username" name="username" placeholder="Username">
+                        <input type="text" class="form-control item" id="username" name="username" placeholder="Username" required>
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control item" id="email" name="email" placeholder="Email">
+                        <input type="text" class="form-control item" id="email" name="email" placeholder="Email" required>
                     </div>
                     <div class="form-group">
-                 <input type="password" class="form-control item" id="password" name="password" placeholder="Password">
+                 <input type="password" class="form-control item" id="password" name="password" placeholder="Password" required>
                  </div>
                  <div class="form-group">
                         <input type="password" class="form-control item" id="confirmPassword" name="confirmPassword" placeholder="Confirm Password">
                     </div>
+                    
                     <div class="form-group">
                         <button type="submit"  class="btn btn-block create-account" id="register-btn">Register</button>
                     </div>

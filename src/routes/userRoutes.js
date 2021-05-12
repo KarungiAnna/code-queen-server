@@ -2,7 +2,7 @@ import { Router } from 'express';
 import { homePage, cohortsPage, signupPage, createUser, 
  loginPage, 
   loginUser, forgotpasswordPage, forgotPassword, resetpasswordPage, resetPassword, studentProfile, adminDashboard,
-fetchAllUsers } from '../controllers/UserControllers';
+fetchAllUsers} from '../controllers/UserControllers';
 import isAuth from '../middleware/auth.js'
 
 
@@ -22,10 +22,11 @@ const router = Router();
   // forgotpassword route
   router.get("/forgotpassword", forgotpasswordPage);
   router.post("/forgotpassword", forgotPassword);
+  
 
   // resetpassword route
   router.get("/resetpassword/:token", resetpasswordPage);
-  router.patch("/resetpassword/:token", resetPassword);
+  router.post("/resetpassword/:token", resetPassword);
  
   // Profile Route
   router.get('/profile', isAuth, studentProfile);

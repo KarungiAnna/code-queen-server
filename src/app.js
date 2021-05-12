@@ -1,7 +1,6 @@
 import express from "express";
 const session = require('express-session');
 const MongoDBSession = require('connect-mongodb-session')(session);
-const flash = require('express-flash');
 import userRoutes from "./routes/userRoutes";
 import applicationRoutes from "./routes/applicationRoutes";
 import cors from "cors";
@@ -31,7 +30,7 @@ app.use(session({
   }
 })
 );
-app.use(flash());
+
 app.use(bodyParser.urlencoded({
   extended:true
 }));
