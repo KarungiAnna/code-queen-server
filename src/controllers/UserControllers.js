@@ -9,7 +9,7 @@ require("dotenv").config();
 const createUser = async(req, res) => {
     const { firstname, lastname, username, email, password} = req.body;
     try{
-      const user = new User({ firstname, lastname, username, email, password});
+      const user = new User({ firstname ,lastname,username, email, password});
       await user.save();
       res.render('signup',{ successMessage: "Signup successful" });
     } catch (error) {
@@ -24,7 +24,10 @@ const loginUser = async(req, res) => {
    try{ 
    const user = await User.login(username , password);
     req.session.isAuth = true;
-    res.redirect('profile');
+    //res.redirect('profile');
+    res.render('profile',{user :req.body, username: user.username,
+    email: user.email
+    })
      
   } catch (error) {
     res.render('login', { errorMessage: "Error: Incorrect login credentials" });
@@ -50,14 +53,16 @@ await user.save({ validateBeforeSave: false});
 
 //3)send it to user's email
 const resetURL = `${req.protocol}://${req.get('host')}/resetpassword/${resetToken}`;
-const message = `Forgot your password? submit a PATCH request with your new password and passwordConfirm to: ${resetURL}\n
-If you didn't forget your password, please ignore this email`;
+
 
 try{
 await sendEmail({
   email: user.email,
   subject: 'Your password reset token( valid for 10 mins)',
-  message
+  html: `<h1>Forgot your password?</h1><br><p> To reset your password, please submit a request with your new password and passwordConfirm on this link : ${resetURL}\n.
+  If you didn't forget your password, please ignore this email.</p><img style="width:250px; src="cid:unique@logo/>`,
+  attachments: [ {filename:'CodeQueen Logo.png',path:'./src/public/CodeQueen Logo.png', cid:'unique@logo'}
+]
 });
 return res.render('forgotpassword', { successMessage: "Success: Reset Token sent to Email" })
 
@@ -97,8 +102,10 @@ const resetPassword = async(req, res, next) =>{
 try{
 await sendEmail({
   email: user.email,
-  subject:'Password Reset Successful' ,
-  message: `Congratulations! Your password reset was successful.`  
+  subject:'Password Reset Successful' , 
+  html: `<h1>Congratulations!</h1><br><p>Your password reset was successful. You can now successfully login. </p>`,
+  attachments: [ {filename:'CodeQueen Logo.png',path:'./src/public/CodeQueen Logo.png', cid:'unique@logo'}
+]
 });
  
 res.render("resetpassword",{
@@ -164,7 +171,7 @@ const studentProfile = async (req, res) => {
   req.session.isAuth = true;
   console.log(req.session);
   //console.log(req.session.id);
-  res.render('profile');
+  res.render('profile',{user :req.user});
 }
 //Get Dashboard
 const adminDashboard = async (req, res) => {
