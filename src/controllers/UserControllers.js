@@ -61,7 +61,7 @@ await sendEmail({
   subject: 'Your password reset token( valid for 10 mins)',
   html: `<h1>Forgot your password?</h1><br><p> To reset your password, please submit a request with your new password and passwordConfirm on this link : ${resetURL}\n.
   If you didn't forget your password, please ignore this email.</p><img style="width:250px; src="cid:unique@logo/>`,
-  attachments: [ {filename:'CodeQueen Logo.png',path:'./src/public/CodeQueen Logo.png', cid:'unique@logo'}
+  attachments: [ {filename:'Code Queen Logo.png',path:'./src/public/images/Code Queen Logo.png', cid:'unique@logo'}
 ]
 });
 return res.render('forgotpassword', { successMessage: "Success: Reset Token sent to Email" })
@@ -104,7 +104,7 @@ await sendEmail({
   email: user.email,
   subject:'Password Reset Successful' , 
   html: `<h1>Congratulations!</h1><br><p>Your password reset was successful. You can now successfully login. </p>`,
-  attachments: [ {filename:'CodeQueen Logo.png',path:'./src/public/CodeQueen Logo.png', cid:'unique@logo'}
+  attachments: [ {filename:'Code Queen Logo.png',path:'./src/public/images/Code Queen Logo.png', cid:'unique@logo'}
 ]
 });
  
@@ -133,6 +133,7 @@ res.render("resetpassword",{
 const homePage = (req, res) => {
  res.render('homepage');
 }
+
 //Get cohorts page
 const cohortsPage = (req, res) => {
   res.render('cohorts');
@@ -196,6 +197,6 @@ const fetchAllUsers = async (req, res) => {
 
 //logout 
 
-export { homePage, cohortsPage,signupPage, createUser, 
+export { homePage,  cohortsPage,signupPage, createUser, 
  loginPage,
    loginUser, forgotpasswordPage, forgotPassword, resetpasswordPage, resetPassword, studentProfile, adminDashboard, fetchAllUsers}

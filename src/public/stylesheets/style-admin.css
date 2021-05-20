@@ -1,0 +1,250 @@
+/* theme colors */
+:root{
+    --gray-color:  #231f20;
+    --light-gray-color: #2b2526;
+    --font-color: #eeeeee;
+    --orange-color: rgb(212, 138, 0);
+}
+
+/* removes the horizontal scroll issue on larger screen but not mobile version */
+*{
+    max-width: 100%;
+}
+
+/* body */
+body {
+    background: #eeeeee;
+    padding: 0px !important;
+    margin: 0px !important;
+    font-size:15px;
+    font-family: 'Poppins', sans-serif;
+    background: #fafafa;
+   
+}
+.welcome-admin{
+    margin-left: 8px;
+    color: var(--font-color) !important;
+}
+.logo-header{
+   width: 160px;
+}
+.sidebar-header{
+    margin-top: 1.5rem;
+}
+.components li{
+    padding-top: 8px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid gray;
+}
+p {
+    font-size: 1.1em;
+    font-weight: 300;
+    line-height: 1.7em;
+    color: #999
+}
+
+a,
+a:hover,
+a:focus {
+    color: inherit;
+    text-decoration: none;
+    transition: all 0.3s
+}
+
+.navbar {
+    padding: 15px 10px;
+    background: var(--gray-color) !important;
+    border: none;
+    border-radius: 0;
+    margin-bottom: 40px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1)
+}
+
+.navbar-btn {
+    box-shadow: none;
+    outline: none !important;
+    border: none
+}
+
+
+.wrapper {
+    display: flex;
+    width: 100%;
+    align-items: stretch
+}
+
+#sidebar {
+    min-width: 200px;
+    max-width: 200px;
+    height: 98vh;
+    background: var(--light-gray-color);
+    color: var(--font-color);
+    transition: all 0.3s;
+    margin-top: 5.2rem;
+    position: fixed;
+ 
+}
+
+#sidebar.active {
+    margin-left: -250px
+}
+
+
+#sidebar ul.components {
+    padding: 5px 5px;
+}
+
+#sidebar ul p {
+    padding: 10px;
+    font-size: 15px;
+    display: block;
+    color: var(--font-color);
+}
+
+#sidebar ul li a {
+    padding: 10px;
+    font-size: 1.1em;
+    display: block
+}
+
+#sidebar ul li a:hover {
+    color: var(--font-color);
+    background: var(--orange-color)
+}
+
+#sidebar ul li.active>a,
+a[aria-expanded="true"] {
+    color: var(--font-color);
+    background: var(--orange-color)
+}
+
+a[data-toggle="collapse"] {
+    position: relative
+}
+
+#sidebar > .dropdown-toggle::after {
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%)
+}
+#navnav > .dropdown-toggle::after {
+    display: block;
+    position: absolute;
+   
+}
+#navnav > #toggler-tog{
+    background-color: var(--orange-color);
+}
+#navnav > button > .fa{
+    border: none !important;
+    color: var(--orange-color);
+    background: none;
+}
+ul ul a {
+    font-size: 0.9em !important;
+    padding-left: 30px !important;
+   
+}
+.name-link{
+    color: var(--font-color) !important;
+}
+#navbarNav ul ul{
+    padding-top: 10px !important;
+    /* background: purple; */
+}
+#navbarNav .nav-item{
+    padding: 6px;
+    
+}
+#navbarNav .fas{
+    font-size: 20px;
+    color: var(--orange-color);
+}
+
+.dropdown-item .fas{
+    font-size: 15px !important;
+    color: var(--orange-color);
+}
+.dropdown-menu .dropdown-item{
+    padding: 10px;
+}
+
+#content {
+    /* width: 100%; */
+    padding: 20px;
+    min-height: 100vh;
+    transition: all 0.3s
+}
+ 
+.content-wrapper {
+    padding: 10px;
+    margin-top: 7rem;
+    margin-left: 13rem;
+    width:100%; /* the width makes a difference, play with it */
+    
+}
+.content-toggle{
+    margin-left: 0.5rem;
+    /* width:1000px */
+}
+
+
+.content-wrapper > h2{
+    margin-bottom: 2rem;
+}
+
+/* tables */
+.user-info{
+    margin-top: 50px;
+    
+}
+.user-table{
+    margin-top: 30px;
+}
+
+
+
+/* BUTTONS */
+.delete-user-btn{
+    margin: 5px;
+    padding: 10px;
+}
+.btn-orange, .btn-green{
+    color: var(--font-color);
+
+}
+.btn-orange{
+    background-color: var(--orange-color);
+}
+.btn-green{
+    background-color: green;
+}
+
+/* media queries */
+
+
+@media(max-width:768px) {
+    #sidebar {
+        margin-left: -250px;
+        margin-top: 4rem;
+    }
+
+    #sidebar.active {
+        margin-left: 0px
+    }
+
+    #sidebarCollapse span {
+        display: none
+    }
+    .content-wrapper {
+        margin-left: 2rem;
+    }
+   
+}
+@media all and (min-width: 992px) {
+	.navbar .nav-item .dropdown-menu{ display: none; }
+	.navbar .nav-item:hover .dropdown-menu{ display: block; }
+	.navbar .nav-item .dropdown-menu{ margin-top:0; margin-right: 10px; }
+}

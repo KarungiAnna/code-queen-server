@@ -17,9 +17,8 @@ const formPage = (req, res) => {
     console.log("Data>>>>>",newApplication)
     newApplication.save()
     .then(data => {
-       console.log(data)
-       res.redirect('homepage');
-      // res.send("Application saved to database");
+      console.log(data)
+      res.render('form', {message: "Application submitted"})
     })
     .catch(err => {
        console.log(err)

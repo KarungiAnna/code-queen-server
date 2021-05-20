@@ -26,23 +26,25 @@ body {
     margin-bottom: 13px;
 }
 .logo-header{
-    width: 120px;
+    width: 5rem;
+    
 }
 
 /* top nav bar */
 .navbar{
     background-color: var(--font-color) !important;
+    box-shadow: 1px 1px 3px 0px rgba(0, 0, 0, 0.5);
+
 }
 .nav-link{
-    font-size: 18px;
+    font-size: 15px;
     color: var(--orange-color) !important;
-    transition: transform .2s; 
-    padding: 7px 20px !important;
+    padding: 5px 10px !important;
     
 }
 .nav-link:hover{
-    /* color: var(--font-color) !important; */
-    transform: scale(1.18);
+    color: var(--gray-color) !important;
+    
 
 }
 .navbar-toggler{
@@ -53,7 +55,7 @@ body {
 /* header */
 header{
     position: relative;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url("images/pic2.jpg");
+    background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url("../images/pic2.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -99,20 +101,20 @@ header{
 }
 .section-title{
     color: var(--orange-color);
-    margin-bottom: 100px;
+    margin-bottom: 80px;
     margin-top: 50px;
-    text-shadow: 2px 2px rgba(0, 0, 0, 0.5);
+    
 }
 .section-text{
     width: 90%;
     margin: auto;
-    margin-top: 150px;
-    margin-bottom: 200px;
+    margin-top: 100px;
+    margin-bottom: 100px;
 
 }
 .feature{
     box-shadow: 1px 1px 6px 0px rgba(0, 0, 0, 0.5);
-    /* padding */
+  
 }
 
 .feature-icon{
@@ -144,8 +146,6 @@ header{
     font-size: 16px;
 }
 .cohorts-section{
-    /* box-shadow: 0px 0px 4px 2px rgba(0, 0, 0, 0.5); */
-    /* padding-top: 1%; */
     padding-bottom: 20px;
     font-size: small;
     border-radius: 5px;
@@ -167,13 +167,11 @@ header{
 }
 /* bonus section */
 .bonus-section{
-    height: 45vh;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url("images/logo.jpg");
+    height: 50vh;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url("../images/logo.jpg");
     margin-top: 90px;
     position: relative;
     background-attachment: fixed;
-    
-
 }
 .bonus-text{
     position: absolute;
@@ -183,7 +181,10 @@ header{
 }
 .bonus-text h2{
     margin-top: 100px;
+    margin-left: 8rem;
+    
 }
+
 .orange-text{
     color: var(--orange-color);
 }
@@ -233,7 +234,8 @@ address{
 
 /* partners-section */
 .partners-section{
-    margin-top: 120px;
+    margin-top: 100px;
+    height: 40vh;
    
 }
 .logos{
@@ -244,12 +246,9 @@ address{
     margin: auto;
 }
 .partners-section h2{
-    margin-bottom: 100px;
+    margin-bottom: 80px;
 }
-.section-title-2{
-    color: var(--gray-color);
-    text-shadow: 2px 2px rgba(0, 0, 0, 0.5);
-}
+
 /* cohorts page */
 .cohort-intro-div{
     margin-top: 100px;
@@ -266,11 +265,15 @@ address{
     margin: auto;
 }
 
-.thumb-img, .thumb-div{
+.thumb-div{
     width: 100%;
     margin: auto;
 }
-
+.thumb-img{
+    width: 100%;
+    height: 260px;
+    /* height: auto; */
+}
 .taiming{
     font-size: small;
     padding-top: 4rem;
@@ -303,6 +306,26 @@ address{
     height: 100%;
 }
 
+/* gallery section */
+#gallery-section{
+    width: 90%;
+    margin: auto;
+}
+#gallery-section > .col-md-4{
+    margin-top: 1.5rem;
+}
+.gallery{
+    margin-top: 100px;
+}
+.picss{
+    width: 100%;
+    height: 250px;
+    transition: transform .2s;
+}
+.picss:hover{
+    transform: scale(1.05);
+}
+
 
 /* media queries */
 @media only screen and (max-width: 780px){
@@ -317,6 +340,14 @@ address{
     .cohort-dates{
         width: 95%;
         margin: auto;
+    }
+    .bonus-text h2{
+        margin-top: 5rem;
+        margin-left: 0px;
+    }
+    .picss{
+        width: 100%;
+        height: auto;
     }
 }
 

@@ -1,0 +1,42 @@
+:root{
+    --gray-color:  #231f20;
+    --font-color: #eeeeee;
+    --orange-color: rgb(212, 138, 0);
+    --blue-color: #2F4A6D;
+    --light-gray-color: #2b2526;
+    
+}
+
+/* student tabel */
+#student-table{
+  margin-top: 20px;
+}
+
+th {
+  padding: 12px 10px;
+  color: var(--orange-color);
+  text-align: center;
+  text-transform: capitalize;
+}
+td{
+  padding: 12px 4px;
+  
+}
+th, td{
+  border: 1px solid gray;
+}
+td.button{
+  padding: 5px 5px;
+}
+td > button{
+  padding: 5px 8px;
+  background-color: var(--orange-color);
+  color: var(--font-color);
+  border: none;
+  border-radius: 3px;
+}
+td > button:hover{
+  background-color: var(--font-color);
+  border: 1px solid var(--orange-color);
+  color: var(--orange-color);
+}
